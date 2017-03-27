@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.sherlockxu.recyclerviewdemo.MainActivity">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.sherlockxu.recyclerviewdemo.MainActivity.Presenter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_listview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{presenter.onClick}"
+                android:text="listview" />
+
+            <Button
+                android:id="@+id/button_gridview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{presenter.onClick}"
+                android:text="gridview" />
+
+            <Button
+                android:id="@+id/button_hor_gridview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{presenter.onClick}"
+                android:text="hor" />
+
+            <Button
+                android:id="@+id/button_staggered"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{presenter.onClick}"
+                android:text="stagger" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</layout>
