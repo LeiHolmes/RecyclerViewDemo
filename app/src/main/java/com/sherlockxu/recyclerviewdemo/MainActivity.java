@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
+import android.widget.Toast;
 
 import com.sherlockxu.recyclerviewdemo.databinding.ActivityMainBinding;
 
@@ -40,11 +41,13 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view, int position) {
                 adapter.addItem(position);
+                Toast.makeText(MainActivity.this, "点击click:"+position, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onLongClick(View view, int position) {
                 adapter.removeItem(position);
+                Toast.makeText(MainActivity.this, "长按click:"+position, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -81,6 +84,5 @@ public class MainActivity extends Activity {
                     break;
             }
         }
-
     }
 }

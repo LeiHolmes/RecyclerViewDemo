@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private Context context;
     private LayoutInflater inflater;
-    private ArrayList<String> datas;
+    protected ArrayList<String> datas;
     private onItemClickedListener onItemClickedListener;
 
     public MyAdapter(Context context, ArrayList<String> datas) {
@@ -70,7 +70,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 @Override
                 public void onClick(View view) {
                     if (onItemClickedListener != null)
-                        onItemClickedListener.onClick(view, getAdapterPosition());
+                        onItemClickedListener.onClick(view, getAdapterPosition());//可立刻获取到当前position
+//                        onItemClickedListener.onClick(view, getLayoutPosition());//需等当前视图更新完才能获取到当前position，<16ms。
                 }
             });
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
