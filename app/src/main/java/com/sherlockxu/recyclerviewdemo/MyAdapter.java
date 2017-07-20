@@ -48,12 +48,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         return datas.size();
     }
 
+    /**
+     * 添加条目
+     */
     public void addItem(int position) {
         datas.add(position, "xulei");
 //        notifyDataSetChanged();
         notifyItemInserted(position);//调用这个才有动画效果
     }
 
+    /**
+     * 移除条目
+     */
     public void removeItem(int position) {
         datas.remove(position);
         notifyItemRemoved(position);
@@ -85,10 +91,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         }
     }
 
+    /**
+     * 点击回调的接口
+     */
     interface onItemClickedListener {
         void onClick(View view, int position);
 
         void onLongClick(View view, int position);
     }
-
 }

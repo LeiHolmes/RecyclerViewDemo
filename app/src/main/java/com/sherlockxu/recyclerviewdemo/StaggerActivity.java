@@ -57,5 +57,7 @@ public class StaggerActivity extends AppCompatActivity {
 //        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
         //设置RecyclerView的动画
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+        
+        
     }
 }

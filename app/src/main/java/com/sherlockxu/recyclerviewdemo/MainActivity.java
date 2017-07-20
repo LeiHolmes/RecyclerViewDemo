@@ -41,13 +41,13 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view, int position) {
                 adapter.addItem(position);
-                Toast.makeText(MainActivity.this, "点击click:"+position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "点击click:" + position, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onLongClick(View view, int position) {
                 adapter.removeItem(position);
-                Toast.makeText(MainActivity.this, "长按click:"+position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "长按click:" + position, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -59,6 +59,8 @@ public class MainActivity extends Activity {
         }
         adapter = new MyAdapter(this, list);
         recyclerView.setAdapter(adapter);
+        //设置RecyclerView保持固定的大小
+        recyclerView.setHasFixedSize(true);
         //设置RecyclerView布局管理
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         //设置RecyclerView的Item分割线
